@@ -15,17 +15,25 @@ export default (env: EnvVariables) => {
 
   const config: webpack.Configuration = {
     mode: env.mode ?? 'development',
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].js',
       clean: true
     },
     plugins: [
-      new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html')})
+      new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html')}),
     ],
     module: {
       rules: [
+        {
+          test: /\.s[ac]ss$/i,
+          use: ["style-loader", "css-loader", "sass-loader"]
+        },
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"]
+        },
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
