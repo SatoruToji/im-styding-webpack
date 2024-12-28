@@ -1,8 +1,18 @@
 import path from 'path'
 import webpack from 'webpack'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server"
 
-export default (env: any) => {
+type MODE = 'production' | 'development'
+
+interface EnvVariables {
+  mode: MODE
+  port: number
+}
+
+export default (env: EnvVariables) => {
+  const isDev = env.mode === 'development'
+
   const config: webpack.Configuration = {
     mode: env.mode ?? 'development',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
@@ -25,7 +35,13 @@ export default (env: any) => {
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
-    }  
+    },
+    devtool: isDev ? 'inline-source-map' : false,
+    devServer: isDev ? {
+      port: env.port ?? 6969,
+      open: true,
+      hot: true,
+    }: undefined,
   }
   return config
 } 
