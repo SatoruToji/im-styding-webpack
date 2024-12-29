@@ -1,0 +1,33 @@
+body {
+  background-color: #222;
+  color: white;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+  &:hover{
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+footer {
+  color: gray;
+}
+
+img {
+  margin: 0;
+  width: 200px;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

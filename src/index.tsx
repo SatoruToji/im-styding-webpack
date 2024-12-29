@@ -4,6 +4,8 @@ import React, { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { LazyAbout } from '@/pages/about/about.lazy'
 import { LazyFuck } from '@/pages/fuck/fuck.lazy'
+import Footer from './pages/footer/footer'
+import Hutaochka from './pages/hutaochka/hutaochka'
 
 const root = document.getElementById('root')
 
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
         path: '/fuck',
         element: <Suspense fallback={'hold on...'}><LazyFuck /></Suspense>
       },
+      {
+        path: '/footer',
+        element: <Footer />,
+      },
+      {
+        path: '/hutaochka',
+        element: <Hutaochka />
+      }
     ]
   }
 ])

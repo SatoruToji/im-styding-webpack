@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.scss'
+import '@/style.scss'
 import { Link, Outlet } from 'react-router-dom'
 import Footer from '@/pages/footer/footer'
 
@@ -11,6 +11,10 @@ export const App = () => {
       <Link to={'/about'}>about)</Link>
       <br />
       <Link to={'/fuck'}>нет иди нахуй</Link>
+      <br />
+      <Link to={'/hutaochka'}>some hu tao?</Link>
+      <br />
+      <Link to={'/footer'}>footer</Link>
       <br />
       <Link to={'/'}>come back</Link>
       <h1>{count}</h1>

@@ -29,7 +29,13 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     exclude: /node_modules/,
   }
 
+  const assetLOADER = {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  }
+
   return [
+    assetLOADER,
     scssLOADER,
     tsLOADER,
   ]
