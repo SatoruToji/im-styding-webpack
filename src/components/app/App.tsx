@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.scss'
 import { Link, Outlet } from 'react-router-dom'
+import Footer from '@/pages/footer/footer'
 
 export const App = () => {
   const [count, setCount] = useState<number>(0)
@@ -15,6 +16,7 @@ export const App = () => {
       <h1>{count}</h1>
       <button onClick={increment}>+1</button>
       <Outlet />
+      <Footer />
     </div>
   )
 }

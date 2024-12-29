@@ -1,9 +1,9 @@
 import {createRoot} from 'react-dom/client'
-import { App } from './components/App'
+import { App } from '@/components/app/App'
 import React, { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { LazyAbout } from './pages/about/about.lazy'
-import { LazyFuck } from './pages/fuck/fuck.lazy'
+import { LazyAbout } from '@/pages/about/about.lazy'
+import { LazyFuck } from '@/pages/fuck/fuck.lazy'
 
 const root = document.getElementById('root')
 
