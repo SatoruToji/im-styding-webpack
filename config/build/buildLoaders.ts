@@ -4,6 +4,16 @@ import { ModuleOptions } from "webpack";
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const isDev = options.mode === 'development'
+
+  const cssLoaderWithModules = {
+    loader: 'css-loader',
+    options: {
+      modules: {
+        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+      },
+    },
+  }
+
   const scssLOADER = {
     test: /\.s[ac]ss$/i,
     use: [ 
