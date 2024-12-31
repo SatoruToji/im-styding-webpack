@@ -23,10 +23,22 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     ]
   }
 
+  // const tsLOADER = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // }
   const tsLOADER = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
     exclude: /node_modules/,
+    test: /\.tsx?$/,
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true
+        }
+      }
+    ]
   }
 
   const assetLOADER = {
