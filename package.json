@@ -5,7 +5,10 @@
   "scripts": {
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "start": "webpack serve --env mode=development"
+    "start": "webpack serve --env mode=development",
+    "build:desktop": "webpack serve --env mode=development --env platform=platform",
+    "build:mobile": "webpack serve --env mode=development --env platform=mobile"
+
   },
   "keywords": [],
   "author": "",

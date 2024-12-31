@@ -6,8 +6,13 @@ import Footer from '@/pages/footer/footer'
 export const App = () => {
   const [count, setCount] = useState<number>(0)
   const increment = () => setCount(prev => prev + 1)
+
+  if(__PLATFORM__ === 'mobile') <div>я ненавижу мобаил гаминг</div>
+  if(__PLATFORM__ === 'desktop') <div>я люблю компьтеры🤗</div>
+
   return(
     <div>
+      <h1>PLATFORM = {__PLATFORM__}</h1>
       <Link to={'/about'}>about)</Link>
       <br />
       <Link to={'/fuck'}>нет иди нахуй</Link>
