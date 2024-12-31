@@ -7,8 +7,8 @@ export const App = () => {
   const [count, setCount] = useState<number>(0)
   const increment = () => setCount(prev => prev + 1)
 
-  if(__PLATFORM__ === 'mobile') <div>я ненавижу мобаил гаминг</div>
-  if(__PLATFORM__ === 'desktop') <div>я люблю компьтеры🤗</div>
+  // if(__PLATFORM__ === 'mobile') <div>я ненавижу мобаил гаминг</div>
+  // if(__PLATFORM__ === 'desktop') <div>я люблю компьтеры🤗</div>
 
   return(
     <div>
